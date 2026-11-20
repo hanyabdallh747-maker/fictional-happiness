@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ZERO TO ONE — YLY | كرياتيفا طنطا</title>
+  <meta name="description" content="سجّل في إيفنت Zero to One من YLY — 1 ديسمبر في كرياتيفا طنطا. مجاناً وبمقاعد محدودة." />
+  <meta property="og:title" content="ZERO TO ONE — YLY" />
+  <meta property="og:description" content="إيفنت Zero to One — 1 ديسمبر، كرياتيفا طنطا" />
+  <meta property="og:image" content="assets/logo.jpg" />
+  <link rel="icon" href="assets/logo.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="bg-grid" aria-hidden="true"></div>
+
+  <!-- ======================= HERO ======================= -->
+  <header class="hero">
+    <div class="hero__inner">
+      <img class="hero__logo" id="logo" src="assets/logo.jpg" alt="شعار YLY — Youth Leading Youth" />
+
+      <p class="hero__org" id="org"></p>
+      <h1 class="hero__title" id="title">ZERO TO ONE</h1>
+      <p class="hero__tagline" id="tagline"></p>
+
+      <ul class="hero__meta">
+        <li class="chip">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2v3M17 2v3M3.5 9h17M5 5h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z"/></svg>
+          <span id="dateText"></span>
+        </li>
+        <li class="chip">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg>
+          <span id="locationText"></span>
+        </li>
+        <li class="chip chip--gold" id="seatsChip">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 2.9 6.2 6.6.9-4.8 4.7 1.2 6.7L12 17.3 6.1 20.5l1.2-6.7L2.5 9.1l6.6-.9L12 2Z"/></svg>
+          <span id="seatsText"></span>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ======================= FORM ======================= -->
+  <main class="wrap">
+    <section class="card" id="formCard">
+      <div class="card__head">
+        <h2>سجّل دلوقتي</h2>
+        <p class="card__sub">املأ بياناتك الأساسية… يلا نبدأ الرحلة من الصفر 🚀</p>
+      </div>
+
+      <div class="alert alert--error" id="formAlert" hidden></div>
+
+      <form id="registerForm" novalidate>
+        <div class="grid" id="fields"></div>
+
+        <!-- فخ للروبوتات -->
+        <input type="text" name="website" id="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+        <div class="form__footer">
+          <button type="submit" class="btn btn--primary" id="submitBtn">
+            <span class="btn__label">تأكيد التسجيل</span>
+            <span class="btn__spinner" hidden></span>
+          </button>
+          <p class="hint" id="privacyNote"></p>
+        </div>
+      </form>
+    </section>
+
+    <aside class="aside">
+      <div class="aside__card">
+        <h3>ليه تسجّل؟</h3>
+        <ul class="ticks">
+          <li>ورشة عملية تاخد من فكرة لـ Startup في يوم واحد</li>
+          <li>لقاءات مع مؤسسين وشباب بيشتغلوا في السوق</li>
+          <li>فرصة تكون جزء من مجتمع YLY Season 8</li>
+        </ul>
+      </div>
+      <div class="aside__card aside__card--dark">
+        <h3>بياناتك في أمان 🔒</h3>
+        <p id="privacyNote2"></p>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="footer">
+    <img src="assets/logo.jpg" alt="YLY" class="footer__logo" />
+    <p id="footerOrg"></p>
+    <p class="footer__copy">© <span id="year"></span> YLY — Zero to One</p>
+    <a class="footer__admin" href="admin.html">لوحة تحكم التسجيلات (فريق YLY)</a>
+  </footer>
+
+  <!-- ======================= SUCCESS ======================= -->
+  <div class="overlay" id="successOverlay" hidden>
+    <div class="success" role="dialog" aria-modal="true" aria-labelledby="successTitle">
+      <div class="success__icon">✓</div>
+      <h3 id="successTitle">تم تسجيلك بنجاح!</h3>
+      <p id="successMsg"></p>
+      <p class="success__id">كود التسجيل: <strong id="successId"></strong></p>
+      <p class="success__note" id="successNote"></p>
+      <button class="btn btn--ghost" id="closeSuccess">تمام، شكراً</button>
+    </div>
+  </div>
+
+  <script src="js/config.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
